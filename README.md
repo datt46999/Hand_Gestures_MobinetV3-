@@ -28,7 +28,7 @@ python run.py -c test -p configs/MobileNetV3_large.yaml
 Download: [Model](https://drive.google.com/file/d/1Y0j5G4boUjZ14M6EZSN3piBQmF1L8ZOJ/view?usp=drive_link)
 
 ## 👨‍🏫 Deploy and results:
-# F1Score = 0.96
+F1Score = 0.96
 # Demo
 
 
