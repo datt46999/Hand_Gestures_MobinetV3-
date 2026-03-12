@@ -1,7 +1,7 @@
 ## 📖 Introduction 
 Using MobileNet_V3 for hand gesture.
 
-This model was trained on only 5 classes(ok, call, first, take a picture, dislike) from the 34 classes in the HaGRID v2 dataset.
+
 ## 🛠️ Installation
 ```shell
 conda create --name myenv python=3.10 -y
@@ -26,6 +26,8 @@ python run.py -c test -p configs/MobileNetV3_large.yaml
 ```
 ## 👀 Model pretrained :
 Download: [Model](https://drive.google.com/file/d/1Y0j5G4boUjZ14M6EZSN3piBQmF1L8ZOJ/view?usp=drive_link)
+
+This model was trained on only 5 classes(ok, call, first, take a picture, dislike) from the 34 classes in the HaGRID v2 dataset.
 
 ## 👨‍🏫 Deploy and results:
 F1Score = 0.96
