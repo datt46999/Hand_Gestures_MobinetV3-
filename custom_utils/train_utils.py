@@ -184,10 +184,6 @@ class Trainer:
                 with torch.no_grad():
                     output = self.model(images)
 
-                # TODO: use it for fix CUDA OOM
-                # targets = [{k: v.detach().cpu() for k, v in t.items()} for t in targets]
-                # output = [{k: v.detach().cpu() for k, v in t.items()} for t in output]
-
                 metric = self.metric_calculator(output, targets)
 
                 logger.log_iteration(iteration + 1, self.current_state["epoch"], metrics=metric)
@@ -208,10 +204,7 @@ class Trainer:
                 with torch.no_grad():
                     output = self.model(images)
 
-                # TODO: use it for fix CUDA OOM
-                # targets = [{k: v.detach().cpu() for k, v in t.items()} for t in targets]
-                # output = [{k: v.detach().cpu() for k, v in t.items()} for t in output]
-
+                
                 metric = self.metric_calculator(output, targets)
                 logger.log_iteration(iteration + 1, self.current_state["epoch"], metrics=metric)
 
