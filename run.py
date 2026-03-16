@@ -39,12 +39,10 @@ def run(args):
 
     train_dataloader, val_dataloader, test_dataloader, model = load_train_objects(config, args.command, args.n_gpu)
 
-    if model.type == "detector":
-        metric = MeanAveragePrecision(class_metrics=False)
-    else:
-        task = "binary" if config.dataset.one_class else "multiclass"
-        num_classes = 2 if config.dataset.one_class else len(config.dataset.targets)
-        metric = F1ScoreWithLogging(task=task, num_classes=num_classes)
+    
+    task = "binary" if config.dataset.one_class else "multiclass"
+    num_classes = 2 if config.dataset.one_class else len(config.dataset.targets)
+    metric = F1ScoreWithLogging(task=task, num_classes=num_classes)
 
     optimizer, scheduler = load_train_optimizer(model, config)
     trainer = Trainer(
